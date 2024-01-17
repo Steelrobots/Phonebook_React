@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const { faArrowDownZA, faArrowUpAZ, faMagnifyingGlass, faUserPlus } = require("@fortawesome/free-solid-svg-icons");
+const { faArrowDownZA, faArrowUpAZ, faUserPlus } = require("@fortawesome/free-solid-svg-icons");
 
 
 
