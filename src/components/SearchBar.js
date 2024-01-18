@@ -23,12 +23,14 @@ export default function SearchBar() {
     return (
         <div className="all">
             <BtnAsc />
-            <form class="nosubmit">
-                <input class="nosubmit" type="search" placeholder="Search..." />
+            <form className="nosubmit">
+                <input className="nosubmit" type="search" placeholder="Search..." />
             </form>
+            <Link to={"/add"}>
             <button>
                 <FontAwesomeIcon icon={faUserPlus} />
             </button>
+            </Link>
         </div>
     )
 }
