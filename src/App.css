@@ -117,3 +117,60 @@ input.nosubmit {
 .btn-add a{
   padding: 17px 15px 16px 15px;
 }
+
+/* phone item */
+.container-item{
+  display: inline-flex;
+  height: 90px;
+  width: 200px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;;
+  border-color: rgb(17, 16, 16);
+  margin: 10px 5px 10px 6px;
+  padding: 5px 2px 5px 5px;
+  background-color: #9C9C9C;
+
+}
+.container-image{
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.avatar{
+  height: 90px;
+  width: 80px;
+  margin-top: 15px;
+  border-radius: 50%;
+  float: left;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  height: 100px;
+  width: 110px;
+}
+p {
+  text-align: left;
+  margin: 3px 0px;
+  font-size: 13px;
+}
+
+
+.btn-list{
+  display: inline-flex;
+  margin: 5px;
+  background-color: #9C9C9C;
+  margin-left: 10px;
+}
+.btn{
+  height: 25px;
+  width: 25px;
+  background-color: #9C9C9C;
+  font-size: medium;
+  border: none;
+  cursor: pointer;
+}
