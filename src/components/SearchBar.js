@@ -5,31 +5,35 @@ const { faArrowDownZA, faArrowUpAZ, faUserPlus } = require("@fortawesome/free-so
 
 
 
-function BtnAsc() {
+function BtnAsc({ sort, setSort }) {
     return (
-        <button>
+        <button onClick={() => { setSort('desc') }}>
             <FontAwesomeIcon icon={faArrowUpAZ} />
         </button>
     )
 }
-function BtnDesc() {
+function BtnDesc({ sort, setSort }) {
     return (
-        <button>
+        <button onClick={() => { setSort('asc') }}>
             <FontAwesomeIcon icon={faArrowDownZA} />
         </button>
     )
 }
-export default function SearchBar() {
+export default function SearchBar({ keyword, setKeyword, sort, setSort }) {
+    const searchHandler = (event) =>{
+        const {value} = event.target
+        setKeyword(value)
+    }
     return (
         <div className="all">
-            <BtnAsc />
-            <form className="nosubmit">
-                <input className="nosubmit" type="search" placeholder="Search..." />
-            </form>
+            {sort === 'asc' || sort.sort === 'asc' ? <BtnAsc sort={sort} setSort={setSort} /> : <BtnDesc sort={sort} setSort={setSort} />}
+            <div className="nosubmit">
+                <input className="nosubmit" type="search"  onInput={searchHandler}/>
+            </div>
             <Link to={"/add"}>
-            <button>
-                <FontAwesomeIcon icon={faUserPlus} />
-            </button>
+                <button>
+                    <FontAwesomeIcon icon={faUserPlus} />
+                </button>
             </Link>
         </div>
     )

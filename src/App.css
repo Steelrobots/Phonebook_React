@@ -118,17 +118,25 @@ input.nosubmit {
   text-align: center;
   border-radius: 4px;
   font-size: medium;
-  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }
-
+input:focus {
+  outline:none;
+}
 .btn-add a{
   padding: 17px 15px 16px 15px;
+}
+.btn-add p{
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: medium;
 }
 
 /* phone item */
 .container-item{
   display: inline-flex;
-  height: 90px;
+  height: 100px;
   width: 200px;
   border-style: solid;
   border-width: 1px;
@@ -136,7 +144,7 @@ input.nosubmit {
   border-color: rgb(17, 16, 16);
   margin: 10px 5px 10px 6px;
   padding: 5px 2px 5px 5px;
-  background-color: #9C9C9C;
+  background-color: #CCCCCC;
 
 }
 .container-image{
@@ -178,13 +186,13 @@ p {
 .btn-list{
   display: inline-flex;
   margin: 5px;
-  background-color: #9C9C9C;
+  background-color: #CCCCCC;
   margin-left: 10px;
 }
 .btn{
   height: 25px;
   width: 25px;
-  background-color: #9C9C9C;
+  background-color: #CCCCCC;
   font-size: medium;
   border: none;
   cursor: pointer;
