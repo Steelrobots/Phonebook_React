@@ -28,7 +28,7 @@ export default function SearchBar({ keyword, setKeyword, sort, setSort }) {
         <div className="all">
             {sort === 'asc' || sort.sort === 'asc' ? <BtnAsc sort={sort} setSort={setSort} /> : <BtnDesc sort={sort} setSort={setSort} />}
             <div className="nosubmit">
-                <input className="nosubmit" type="search"  onInput={searchHandler}/>
+                <input className="nosubmit" type="search" value={keyword} onInput={searchHandler}/>
             </div>
             <Link to={"/add"}>
                 <button>
