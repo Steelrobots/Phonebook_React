@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import PhoneItem from "./PhoneItem";
 import SearchBar from "./SearchBar";
 import PhoneList from "./PhoneList";
 

@@ -2,13 +2,14 @@ import axios from "axios";
 
 
 const req = axios.create({
-    baseURL: 'http://http://localhost:3001/api/phonebooks',
+    baseURL: 'http://localhost:3001/api/',
     timeout: 1000,
     headers: { 'X-Custom-Header': 'foobar' }
 });
 
 export const loadPhonebooks = ({ keyword, sort }) => dispatch => req.get('phonebooks', { params: { keyword, sort } }).then(({ data }) => {
     dispatch({ type: 'LOAD_PHONEBOOKS_SUCCESS', data })
+    console.log(`berhasil jalan`)
 }).catch((err) => {
     dispatch({ type: 'LOAD_PHONEBOOKS_FAILED' })
 })
