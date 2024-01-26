@@ -7,15 +7,18 @@ const initialState = {
 }
 const contacts = (state = initialState, action) => {
     switch (action.type) {
-        case 'LOAD_PHONEBOOKS_SUCCESS':
+        case 'LOAD_PHONEBOOKS_SUCCESS':            
             return { ...state, ...action.data }
 
         case 'LOAD_PAGE_SUCCESS':
             return { ...state, phonebooks: [...state.phonebooks, ...action.data.phonebooks], page: action.data.page }
+
         case 'ADD_PHONEBOOKS_SUCCESS':
             return state;
+
         case 'DELETE_PHONEBOOKS_SUCCESS':
             return { phonebooks: state.phonebooks.filter(data => data.id !== action.data.id) }
+
         case 'UPDATE_PHONEBOOKS_SUCCESS':
             return {
                 phonebooks: state.phonebooks.map((item) => {
@@ -26,6 +29,7 @@ const contacts = (state = initialState, action) => {
                     return item
                 })
             }
+
         case 'UPDATE_AVATAR_SUCCESS':
             return {
                 phonebooks: state.phonebooks.map((item) => {
@@ -35,6 +39,7 @@ const contacts = (state = initialState, action) => {
                     return item
                 })
             }
+            
         case 'LOAD_PHONEBOOKS_FAILED':
         case 'LOAD_PAGE_FAILED':
         case 'ADD_PHONEBOOKS_FAILED':

@@ -2,7 +2,7 @@ import { faFloppyDisk, faPenToSquare, faTrashCan } from "@fortawesome/free-solid
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { deletePhonebooks, updateData } from "../action/action";
 import { confirmAlert } from "react-confirm-alert";
 import 'react-confirm-alert/src/react-confirm-alert.css';
@@ -12,6 +12,7 @@ export default function PhoneItem({ user }) {
     const [isEdit, setIsEdit] = useState(false)
     const [newData, setNewData] = useState({ name: user.name, phone: user.phone })
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const handleData = (id, contact) => {
         dispatch(updateData(id, contact))
         setIsEdit(false)
@@ -32,7 +33,9 @@ export default function PhoneItem({ user }) {
 
         })
     }
-
+    const toAvatar = () => {
+        navigate('/avatar', { state: { id: user.id, avatar: user.avatar } })
+    }
     if (isEdit) {
         return (
             <div className="container-item">
@@ -55,9 +58,9 @@ export default function PhoneItem({ user }) {
         return (
             <div className="container-item" key={user.name}>
                 <div className="container-image">
-                    <Link to={`/avatar/${user.id}`}>
+                    <button className="btn-avatar" onClick={toAvatar}>
                         <img src={user.avatar == null ? "/Defaultavatar.png" : `../images/${user.avatar}`} alt="avatar" className="avatar" />
-                    </Link>
+                    </button>
                 </div>
                 <div className="list">
                     <p>{user.name}</p>

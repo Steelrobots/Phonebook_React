@@ -156,10 +156,20 @@ input:focus {
 .avatar{
   height: 90px;
   width: 80px;
-  margin-top: 15px;
   border-radius: 50%;
   float: left;
 }
+.btn-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: transparent;
+  margin-top: 15px;
+  border: none;
+  overflow: hidden;
+  padding: 0px;
+}
+
 .list{
   display: flex;
   flex-direction: column;

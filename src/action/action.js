@@ -9,7 +9,6 @@ const req = axios.create({
 
 export const loadPhonebooks = ({ keyword, sort }) => dispatch => req.get('phonebooks', { params: { keyword, sort } }).then(({ data }) => {
     dispatch({ type: 'LOAD_PHONEBOOKS_SUCCESS', data })
-    console.log(`berhasil jalan`)
 }).catch((err) => {
     dispatch({ type: 'LOAD_PHONEBOOKS_FAILED' })
 })
