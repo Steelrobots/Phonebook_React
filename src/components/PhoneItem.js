@@ -2,7 +2,7 @@ import { faFloppyDisk, faPenToSquare, faTrashCan } from "@fortawesome/free-solid
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { deletePhonebooks, updateData } from "../action/action";
 import { confirmAlert } from "react-confirm-alert";
 import 'react-confirm-alert/src/react-confirm-alert.css';
@@ -59,7 +59,7 @@ export default function PhoneItem({ user }) {
             <div className="container-item" key={user.name}>
                 <div className="container-image">
                     <button className="btn-avatar" onClick={toAvatar}>
-                    <img src={"http://localhost:3001/images/" + (user.avatar == null ? 'Defaultavatar.png' : `${user.avatar}`)} className="avatar" />
+                    <img src={"http://localhost:3001/images/" + (user.avatar == null ? 'Defaultavatar.png' : `${user.avatar}`)} className="avatar" alt="avatar" />
                     </button>
                 </div>
                 <div className="list">

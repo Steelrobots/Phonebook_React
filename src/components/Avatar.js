@@ -39,7 +39,7 @@ export default function Avatar() {
                 <img src={URL.createObjectURL(selectImage)} alt="avatar" />
             </div>) : (
                 <div className="preview">
-                   <img src={"http://localhost:3001/images/" + (state.avatar == null ? 'Defaultavatar.png' : `${state.avatar}`)}  />
+                   <img src={"http://localhost:3001/images/" + (state.avatar == null ? 'Defaultavatar.png' : `${state.avatar}` )} alt="Avatar"  />
                 </div>)
             )}
         </div>
