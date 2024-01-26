@@ -37,6 +37,9 @@
     transform: rotate(360deg);
   }
 }
+button:hover{
+cursor: pointer;
+}
 
 #main-data{
   display: block;
@@ -206,4 +209,18 @@ p {
   font-size: medium;
   border: none;
   cursor: pointer;
+}
+.container-avatar{
+  border: 3px;
+  margin: auto;
+  background-color: whitesmoke;
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px rgb(167, 167, 167);
+  padding: 0px;
+}
+.preview{
+  
+  width: 250px;
+  height: 250px;
 }

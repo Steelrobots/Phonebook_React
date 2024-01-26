@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { updateAvatar } from "../action/action";
+import { faArrowRotateLeft, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
 export default function Avatar() {
     const dispacth = useDispatch()
@@ -22,6 +23,7 @@ export default function Avatar() {
         dispacth(updateAvatar(state.id, formData))
         navigate('/')
     }
+    
     return (
         <div className="container-avatar">
             <h1>Change Avatar</h1>
@@ -30,14 +32,14 @@ export default function Avatar() {
                     <label htmlFor="avatar">avatar</label>
                     <input type="file" accept='image/*' name="avatar" className="ava-form" placeholder="choose file" onChange={imageSet} />
                 </div>
-                <button type="submit"><FontAwesomeIcon icon="fa-light fa-floppy-disk" /></button>
-                <Link to={'/'}><FontAwesomeIcon icon="fa-solid fa-rotate-left" /></Link>
+                <button type="submit"><FontAwesomeIcon icon={faFloppyDisk} /></button>
+                <Link to={'/'}><FontAwesomeIcon icon={faArrowRotateLeft} /></Link>
             </form>
             {(selectImage ? (<div className="preview">
                 <img src={URL.createObjectURL(selectImage)} alt="avatar" />
             </div>) : (
                 <div className="preview">
-                    <img src={"http:/localhost:3001/images/" + (state.avatar ? state.avatar : "Defaultavatar.png")} alt="avatar" />
+                   <img src={"http://localhost:3001/images/" + (state.avatar == null ? 'Defaultavatar.png' : `${state.avatar}`)}  />
                 </div>)
             )}
         </div>

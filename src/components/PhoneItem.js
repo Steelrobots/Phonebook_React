@@ -59,7 +59,7 @@ export default function PhoneItem({ user }) {
             <div className="container-item" key={user.name}>
                 <div className="container-image">
                     <button className="btn-avatar" onClick={toAvatar}>
-                        <img src={user.avatar == null ? "/Defaultavatar.png" : `../images/${user.avatar}`} alt="avatar" className="avatar" />
+                    <img src={"http://localhost:3001/images/" + (user.avatar == null ? 'Defaultavatar.png' : `${user.avatar}`)} className="avatar" />
                     </button>
                 </div>
                 <div className="list">
