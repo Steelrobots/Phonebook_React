@@ -45,14 +45,14 @@ cursor: pointer;
   display: block;
   text-align: center;
   margin-bottom: 10px;
-  padding: 0px 50px;
+  padding: 0px 80px;
 }
 
 .all {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 10px;
 }
 
@@ -69,11 +69,13 @@ form.nosubmit {
   padding-left: 10px;
   padding-right: 10px;
 }
-
+.nosubmit{
+  width: 100%;
+  padding: 10px;
+}
 input.nosubmit {
   border: 1px solid #555;
   width: 100%;
-  padding: 10px 1600px 10px 40px;
   background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
 }
 
@@ -229,8 +231,8 @@ h1{
   padding: 0rem 1rem;
   margin-bottom: 1rem;
 }
-.ava input label{
-  width: 17%;
+.ava-input label{
+  width: 10%;
   pad: 7px 12px;
   line-height: 1.5;
 }
@@ -240,16 +242,34 @@ h1{
   line-height: 1.5;
   padding: 6px 12px;
   font-size: 1rem;
-  border: 1px solid white;
   border-radius: 5px;
 }
+.ava-btn{
+  background-color: #61dafb;
+  padding: 10px;
+  border-color: #61dafb;
+  border-radius: 4px;
+  margin-left: 150px;
+  margin-right: 5px;
+
+}
+.back-btn{
+  background-color: #AF8210;
+  padding: 10px;
+  border-color: #AF8210;
+  border-radius: 4px;
+}
+
 .preview{
   display: inline-block;
   width: 100%;
   margin-top: 15px;
+  margin-left: 150px;
   margin-bottom: 20px;
+  
 }
 .preview img{
   float: left;
   width: 45%;
+  border: 1px solid #282c34;
 }

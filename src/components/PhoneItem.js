@@ -1,4 +1,4 @@
-import { faFloppyDisk, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRotateLeft, faFloppyDisk, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -40,7 +40,9 @@ export default function PhoneItem({ user }) {
         return (
             <div className="container-item">
                 <div className="container-image">
-                    <img src={user.avatar == null ? `/Defaultavatar.png` : `../images/${user.avatar}`} alt='not source' className="avatar" />
+                <button className="btn-avatar" onClick={toAvatar}>
+                    <img src={"http://localhost:3001/images/" + (user.avatar == null ? 'Defaultavatar.png' : `${user.avatar}`)} className="avatar" alt="avatar" />
+                    </button>
                 </div>
                 <div className="list-edit" >
                     <input className='input' type="text" id="nameEdit" value={newData.name} onChange={(e) => setNewData({ ...newData, name: e.target.value })} />
@@ -48,6 +50,9 @@ export default function PhoneItem({ user }) {
                     <div className="btn-list">
                         <button className="btn" onClick={() => { handleData(user.id, newData) }}>
                             <FontAwesomeIcon icon={faFloppyDisk} />
+                        </button>
+                        <button className="btn" onClick={() => { setIsEdit(false) }}>
+                            <FontAwesomeIcon icon={faArrowRotateLeft} />
                         </button>
                     </div>
                 </div>

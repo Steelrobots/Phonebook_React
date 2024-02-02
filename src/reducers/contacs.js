@@ -14,7 +14,8 @@ const contacts = (state = initialState, action) => {
             return { ...state, phonebooks: [...state.phonebooks, ...action.data.phonebooks], page: action.data.page }
 
         case 'ADD_PHONEBOOKS_SUCCESS':
-            return state;
+            return {...state,
+            phonebooks: action.payload, ...state.phonebooks} ;
 
         case 'DELETE_PHONEBOOKS_SUCCESS':
             return { phonebooks: state.phonebooks.filter(data => data.id !== action.data.id) }

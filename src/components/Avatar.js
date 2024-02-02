@@ -23,23 +23,23 @@ export default function Avatar() {
         dispacth(updateAvatar(state.id, formData))
         navigate('/')
     }
-    
+
     return (
         <div className="container-avatar">
             <h1>Change Avatar</h1>
             <form onSubmit={submit}>
                 <div className="ava-input">
-                    <label htmlFor="avatar">avatar</label>
+                    <label htmlFor="avatar">Avatar</label>
                     <input type="file" accept='image/*' name="avatar" className="ava-form" placeholder="choose file" onChange={imageSet} />
                 </div>
-                <button type="submit"><FontAwesomeIcon icon={faFloppyDisk} /></button>
-                <Link to={'/'}><FontAwesomeIcon icon={faArrowRotateLeft} /></Link>
+                <button type="submit" className="ava-btn"><FontAwesomeIcon icon={faFloppyDisk} /></button>
+                <Link to={'/'} ><button className="back-btn"><FontAwesomeIcon icon={faArrowRotateLeft} /></button></Link>
             </form>
             {(selectImage ? (<div className="preview">
                 <img src={URL.createObjectURL(selectImage)} alt="avatar" />
             </div>) : (
                 <div className="preview">
-                   <img src={"http://localhost:3001/images/" + (state.avatar == null ? 'Defaultavatar.png' : `${state.avatar}` )} alt="Avatar"  />
+                    <img src={"http://localhost:3001/images/" + (state.avatar == null ? 'Defaultavatar.png' : `${state.avatar}`)} alt="Avatar" />
                 </div>)
             )}
         </div>
