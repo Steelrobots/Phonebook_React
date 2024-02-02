@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { updateAvatar } from "../action/action";
 import { faArrowRotateLeft, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import defaultAvatar from "../../public/Defaultavatar.png"
 
 export default function Avatar() {
-    const dispacth = useDispatch()
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const { state } = useLocation()
     const [selectImage, setSelectImage] = useState()
@@ -20,8 +21,9 @@ export default function Avatar() {
     const submit = () => {
         const formData = new FormData()
         formData.append('avatar', selectImage)
-        dispacth(updateAvatar(state.id, formData))
+        dispatch(updateAvatar(state.id, formData))
         navigate('/')
+
     }
 
     return (
@@ -44,4 +46,19 @@ export default function Avatar() {
             )}
         </div>
     )
+}
+
+const HandeImageUpload = () => {
+    const imageRef = useRef()
+    const [defaultImage, setDefaultImage] = useState(defaultAvatar)
+
+    const showOpenDialog = () => {
+        imageRef.current.click()
+    }
+    const handleChange = (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+            setSelectImage(e.target.files[0])
+        }
+    };
+
 }
