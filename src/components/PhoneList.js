@@ -7,8 +7,6 @@ export default function PhoneList({ keyword, sort }) {
     const dispatch = useDispatch()
     const { phonebooks, page, pages } = useSelector(state => state.contacts)
     const [isLoading, setIsLoading] = useState(false)
-    console.log ('ini phonebooks',page)
- console.log(window.innerHeight , document.documentElement.scrollTop , document.documentElement.offsetHeight , isLoading)
     
  const handleScroll = async () =>{
         if(window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight && !isLoading){

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { loadPhonebooks,loadPage,addPhonebooks,deletePhonebooks,updateData,updateAvatar } from './API';
 
 
 const initialState = {
@@ -25,6 +26,9 @@ const contactsSlice = createSlice({
             state.total = 31;
             state.status = 'idle';
             state.error = null;
+        },
+        addItem: (state) =>{
+            state.value = [action.payload,...phonebooks]
         }
     },
     extraReducers: (builder) => {
@@ -56,7 +60,8 @@ const contactsSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(addPhonebooks.fulfilled, (state, action) => {
-                state.phonebooks.push(action.payload);
+                state.phonebooks.unshift(action.payload);
+                // state.phonebooks.push(action.payload);
                 state.status = 'succeeded';
             })
             .addCase(addPhonebooks.rejected, (state, action) => {
