@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadPage, loadPhonebooks } from "../action/action";
+// import { loadPage, loadPhonebooks } from "../action/action";
 import PhoneItem from "./PhoneItem";
+import { loadPage, loadPhonebooks } from "../reducers/API";
+import { selectPhonebooks } from "../reducers/phonebook";
 
 export default function PhoneList({ keyword, sort }) {
     const dispatch = useDispatch()
-    const { phonebooks, page, pages } = useSelector(state => state.contacts)
+    const { phonebooks, page, pages } = useSelector(selectPhonebooks)
     const [isLoading, setIsLoading] = useState(false)
     
  const handleScroll = async () =>{

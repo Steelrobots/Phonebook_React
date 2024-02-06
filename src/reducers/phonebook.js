@@ -26,10 +26,8 @@ const contactsSlice = createSlice({
             state.total = 31;
             state.status = 'idle';
             state.error = null;
-        },
-        addItem: (state) =>{
-            state.value = [action.payload,...phonebooks]
         }
+       
     },
     extraReducers: (builder) => {
         builder
@@ -37,8 +35,10 @@ const contactsSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(loadPhonebooks.fulfilled, (state, action) => {
+                
                 state.phonebooks = action.payload;
                 state.status = 'succeeded';
+                console.log('ini load',state.phonebooks)
             })
             .addCase(loadPhonebooks.rejected, (state, action) => {
                 state.status = 'failed';
@@ -48,7 +48,9 @@ const contactsSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(loadPage.fulfilled, (state, action) => {
-                state.phonebooks = [...state.phonebooks, ...action.payload.phonebooks];
+                console.log(state.phonebooks)
+                // state.phonebooks = [...currentState.phonebooks, ...action.payload.phonebooks];
+                // state.phonebooks.push(action.payload)
                 state.page = action.payload.page;
                 state.status = 'succeeded';
             })
@@ -116,6 +118,9 @@ const contactsSlice = createSlice({
             });
     }
 });
+
+export const selectPhonebooks = (state) => state.contacts.phonebooks
+// const currentState = selectPhonebooks(getState())
 
 export const { resetContacts } = contactsSlice.actions;
 

@@ -1,7 +1,7 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import contacts from "./contacs";
+import phonebook from "./phonebook";
 
 export default combineReducers({
-    contacts
+    phonebook
 
 })
