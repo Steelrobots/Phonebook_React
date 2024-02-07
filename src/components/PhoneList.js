@@ -7,7 +7,7 @@ import { selectPhonebooks } from "../reducers/phonebook";
 
 export default function PhoneList({ keyword, sort }) {
     const dispatch = useDispatch()
-    const { phonebooks, page, pages } = useSelector(selectPhonebooks)
+    const { phonebooks, page, pages } = useSelector(selectPhonebooks) 
     const [isLoading, setIsLoading] = useState(false)
     
  const handleScroll = async () =>{

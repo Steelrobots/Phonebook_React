@@ -18,19 +18,19 @@ export default function PhoneItem({ user }) {
     const navigate = useNavigate()
     const inputFile = useRef(null)
 
-    const showFileUpload = () =>{
+    const showFileUpload = () => {
         inputFile.current.click()
     }
     const imageSet = (e) => {
         if (e.target.files && e.target.files.length > 0) {
             setSelectImage(e.target.files[0])
-            const formData = new FormData()
-            formData.append('avatar', selectImage)
-            dispatch(updateAvatar(user.id, formData))
+            const dataNew = new FormData()
+            dataNew.append('avatar', selectImage)
+            dispatch(updateAvatar({ id: user.id, formData: dataNew }))
         }
     };
     const handleData = (id, contact) => {
-        dispatch(updateData(id, contact))
+        dispatch(updateData({ id: user.id, contact: newData }))
         setIsEdit(false)
     }
     const submit = (user) => {
@@ -48,9 +48,6 @@ export default function PhoneItem({ user }) {
             ]
 
         })
-    }
-    const toAvatar = () => {
-        navigate('/avatar', { state: { id: user.id, avatar: user.avatar } })
     }
     if (isEdit) {
         return (
@@ -78,7 +75,7 @@ export default function PhoneItem({ user }) {
     } else {
 
         return (
-            <div className="container-item" key={user.name}>
+            <div className="container-item" key={user.id}>
                 <div className="container-image">
                     <button className="btn-avatar" onClick={showFileUpload}>
                         <img src={"http://localhost:3001/images/" + (user.avatar == null ? 'Defaultavatar.png' : `${user.avatar}`)} className="avatar" alt="avatar" />
