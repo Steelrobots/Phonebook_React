@@ -48,7 +48,7 @@ const contactsSlice = createSlice({
             })
             .addCase(loadPage.fulfilled, (state, action) => {
                 console.log('on scroll', current(state), action.payload)
-                state = { ...state,  phonebooks: [...state.phonebooks, ...action.payload.phonebooks], status: 'succeeded' }
+                state = { ...state, phonebooks: [...state.phonebooks, ...action.payload.phonebooks], status: 'succeeded' }
                 state.page = action.payload.page;
                 state.status = 'succeeded';
                 return state
@@ -61,11 +61,16 @@ const contactsSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(addPhonebooks.fulfilled, (state, action) => {
-                console.log(action.payload)
-                state = { ...action.payload.phonebooks, ...state, status: 'succeeded' }
-                // state.phonebooks.unshift(action.payload);
-                state.status = 'succeeded';
-                console.log(state)
+                console.log(state, action.payload)
+                state = {
+                    ...state, phonebooks: [
+                        {
+                            id: action.payload.phonebooks.id,
+                            name: action.payload.phonebooks.name,
+                            phone:   action.payload.phonebooks.phone
+                         }, ...state.phonebooks.filter(data => data.id !== action.payload.phonebooks.id)], status: 'succeeded'
+                }
+
             })
             .addCase(addPhonebooks.rejected, (state, action) => {
                 state.status = 'failed';
@@ -121,7 +126,6 @@ const contactsSlice = createSlice({
 });
 
 export const selectPhonebooks = (state) => {
-    console.log('getphonebooks', state.contacts)
     return state.contacts
 }
 // const currentState = selectPhonebooks(getState())
