@@ -48,7 +48,7 @@ const contactsSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(loadPage.fulfilled, (state, action) => {
-                console.log(state.phonebooks)
+                console.log(state.phonebooks, action.payload)
                 // state.phonebooks = [...currentState.phonebooks, ...action.payload.phonebooks];
                 // state.phonebooks.push(action.payload)
                 state.page = action.payload.page;

@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deletePhonebooks, updateAvatar, updateData } from "../action/action";
+// import { deletePhonebooks, updateAvatar, updateData } from "../action/action";
 import { confirmAlert } from "react-confirm-alert";
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import { deletePhonebooks, updateAvatar, updateData } from "../reducers/API";
 
 
 export default function PhoneItem({ user }) {
