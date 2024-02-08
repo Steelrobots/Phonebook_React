@@ -1,6 +1,6 @@
 import { faArrowRotateLeft, faFloppyDisk, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 // import { deletePhonebooks, updateAvatar, updateData } from "../action/action";
@@ -23,12 +23,19 @@ export default function PhoneItem({ user }) {
     }
     const imageSet = (e) => {
         if (e.target.files && e.target.files.length > 0) {
+            console.log(e.target.files[0])
             setSelectImage(e.target.files[0])
-            const dataNew = new FormData()
-            dataNew.append('avatar', selectImage)
-            dispatch(updateAvatar({ id: user.id, formData: dataNew }))
         }
     };
+    useEffect(() => {
+
+        if (selectImage ) {
+            const dataNew = new FormData();
+            dataNew.append("avatar", selectImage);
+            dispatch(updateAvatar({ id: user.id, formData: dataNew }));
+        }
+
+    }, [selectImage]);
     const handleData = (id, contact) => {
         dispatch(updateData({ id: user.id, contact: newData }))
         setIsEdit(false)
