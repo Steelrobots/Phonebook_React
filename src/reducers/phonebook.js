@@ -36,7 +36,7 @@ const contactsSlice = createSlice({
             .addCase(loadPhonebooks.fulfilled, (state, action) => {
                 // console.log('ini yang datang dari belakang', action.payload)
                 state = { ...state, ...action.payload, status: 'succeeded' }
-                // console.log('ini load', state)
+                console.log('ini load', state)
                 return state
             })
             .addCase(loadPhonebooks.rejected, (state, action) => {
@@ -65,11 +65,13 @@ const contactsSlice = createSlice({
                 state = {
                     ...state, phonebooks: [
                         {
-                            id: action.payload.phonebooks.id,
-                            name: action.payload.phonebooks.name,
-                            phone:   action.payload.phonebooks.phone
-                         }, ...state.phonebooks.filter(data => data.id !== action.payload.phonebooks.id)], status: 'succeeded'
+                            id: action.payload.id,
+                            name: action.payload.name,
+                            phone:   action.payload.phone
+                         }, ...state.phonebooks.filter(data => data.id !== action.payload.id)], status: 'succeeded'
                 }
+                console.log( 'ini add',state)
+                return state
 
             })
             .addCase(addPhonebooks.rejected, (state, action) => {

@@ -7,24 +7,24 @@ import { selectPhonebooks } from "../reducers/phonebook";
 
 export default function PhoneList({ keyword, sort }) {
     const dispatch = useDispatch()
-    const { phonebooks, page, pages } = useSelector(selectPhonebooks) 
+    const { phonebooks, page, pages} = useSelector(selectPhonebooks)
     const [isLoading, setIsLoading] = useState(false)
-    
- const handleScroll = async () =>{
-        if(window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight && !isLoading){
+
+    const handleScroll = async () => {
+        if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight && !isLoading) {
             try {
-                if(page<pages){
+                if (page < pages) {
                     setIsLoading(true)
-                    const newPage = page+1
-                    dispatch(loadPage({page: newPage, keyword, sort}))
+                    const newPage = page + 1
+                    dispatch(loadPage({ page: newPage, keyword, sort }))
                 }
                 else {
                     setIsLoading(false)
                 }
             } catch (error) {
                 console.log(error)
-                
-            } finally{
+
+            } finally {
                 setIsLoading(false)
             }
         }
@@ -37,15 +37,17 @@ export default function PhoneList({ keyword, sort }) {
     }, [dispatch, pages, page, keyword, sort])
 
     useEffect(() => {
+        
         const readData = async () => {
-            try {
-                dispatch(loadPhonebooks({ keyword, sort }))
-            } catch (error) {
-                console.log(error)
+                try {
 
-            } finally{
-                setIsLoading(false)
-            }
+                    dispatch(loadPhonebooks({ keyword, sort }))
+                } catch (error) {
+                    console.log(error)
+
+                } finally {
+                    setIsLoading(false)
+                }
         }
         readData()
     }, [dispatch, keyword, sort])

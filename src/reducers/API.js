@@ -49,9 +49,7 @@ export const loadPhonebooks = createAsyncThunk(
   export const loadPage = createAsyncThunk(
     'contacts/loadPage',
     async ({ page, keyword, sort }) => {
-      
       const { data } = await req.get('phonebooks', { params: { page, keyword, sort } });
-      console.log('jalan', data)
       return data;
     }
   );
