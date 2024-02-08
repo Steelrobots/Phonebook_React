@@ -29,7 +29,7 @@ export default function PhoneItem({ user }) {
     };
     useEffect(() => {
 
-        if (selectImage ) {
+        if (selectImage) {
             const dataNew = new FormData();
             dataNew.append("avatar", selectImage);
             dispatch(updateAvatar({ id: user.id, formData: dataNew }));

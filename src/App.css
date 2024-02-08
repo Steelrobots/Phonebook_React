@@ -37,11 +37,12 @@
     transform: rotate(360deg);
   }
 }
-button:hover{
-cursor: pointer;
+
+button:hover {
+  cursor: pointer;
 }
 
-#main-data{
+#main-data {
   display: block;
   text-align: center;
   margin-bottom: 10px;
@@ -69,10 +70,12 @@ form.nosubmit {
   padding-left: 10px;
   padding-right: 10px;
 }
-.nosubmit{
+
+.nosubmit {
   width: 100%;
   padding: 10px;
 }
+
 input.nosubmit {
   border: 1px solid #555;
   width: 100%;
@@ -86,7 +89,7 @@ input.nosubmit {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .container form {
@@ -104,10 +107,11 @@ input.nosubmit {
   width: 100%;
   gap: 10px;
 }
-.container-add input{
+
+.container-add input {
   padding: 15px;
   border-radius: 5px;
-  border: solid  1px black;
+  border: solid 1px black;
 }
 
 .btn-add {
@@ -115,8 +119,9 @@ input.nosubmit {
   flex-direction: row;
   gap: 10px;
 }
+
 .btn-add button,
-.btn-add a{
+.btn-add a {
   color: white;
   flex-grow: 1;
   background-color: #AF8210;
@@ -126,13 +131,16 @@ input.nosubmit {
   font-size: medium;
   cursor: pointer;
 }
+
 input:focus {
-  outline:none;
+  outline: none;
 }
-.btn-add a{
+
+.btn-add a {
   padding: 17px 15px 16px 15px;
 }
-.btn-add p{
+
+.btn-add p {
   text-align: center;
   color: white;
   text-decoration: none;
@@ -140,31 +148,35 @@ input:focus {
 }
 
 /* phone item */
-.container-item{
+.container-item {
   display: inline-flex;
   height: 100px;
   width: 200px;
   border-style: solid;
   border-width: 1px;
-  border-radius: 5px;;
+  border-radius: 5px;
+  ;
   border-color: rgb(17, 16, 16);
   margin: 10px 5px 10px 6px;
   padding: 5px 2px 5px 5px;
   background-color: #CCCCCC;
 
 }
-.container-image{
+
+.container-image {
   width: 80px;
   height: 80px;
   display: flex;
   align-items: center;
 }
-.avatar{
+
+.avatar {
   height: 80px;
   width: 80px;
   border-radius: 50%;
   float: left;
 }
+
 .btn-avatar {
   width: 100%;
   height: 100%;
@@ -176,7 +188,7 @@ input:focus {
   padding: 0px;
 }
 
-.list{
+.list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -184,28 +196,32 @@ input:focus {
   height: 100px;
   width: 110px;
 }
+
 p {
   text-align: left;
   margin: 3px 0px;
   font-size: 13px;
 }
-.list-edit{
+
+.list-edit {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
   width: 110px;
 }
-.list-edit input{
+
+.list-edit input {
   margin-left: 10px;
 }
 
-.btn-list{
+.btn-list {
   display: inline-flex;
   margin: 5px;
   background-color: #CCCCCC;
   margin-left: 10px;
 }
-.btn{
+
+.btn {
   height: 25px;
   width: 25px;
   background-color: #CCCCCC;
@@ -213,7 +229,8 @@ p {
   border: none;
   cursor: pointer;
 }
-.container-avatar{
+
+.container-avatar {
   border: 3px;
   margin: auto;
   background-color: whitesmoke;
@@ -222,22 +239,26 @@ p {
   box-shadow: 0px 0px 2px rgb(167, 167, 167);
   padding: 0px;
 }
-h1{
+
+h1 {
   text-align: center;
   padding: 10px;
 }
-.ava-input{
+
+.ava-input {
   display: flex;
   flex-wrap: wrap;
   padding: 0rem 1rem;
   margin-bottom: 1rem;
 }
-.ava-input label{
+
+.ava-input label {
   width: 10%;
   pad: 7px 12px;
   line-height: 1.5;
 }
-.ava-form{
+
+.ava-form {
   width: 84%;
   display: block;
   line-height: 1.5;
@@ -245,7 +266,8 @@ h1{
   font-size: 1rem;
   border-radius: 5px;
 }
-.ava-btn{
+
+.ava-btn {
   background-color: #61dafb;
   padding: 10px;
   border-color: #61dafb;
@@ -254,22 +276,24 @@ h1{
   margin-right: 5px;
 
 }
-.back-btn{
+
+.back-btn {
   background-color: #AF8210;
   padding: 10px;
   border-color: #AF8210;
   border-radius: 4px;
 }
 
-.preview{
+.preview {
   display: inline-block;
   width: 100%;
   margin-top: 15px;
   margin-left: 150px;
   margin-bottom: 20px;
-  
+
 }
-.preview img{
+
+.preview img {
   float: left;
   width: 45%;
   border: 1px solid #282c34;

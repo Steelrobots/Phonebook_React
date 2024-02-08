@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { loadPage, loadPhonebooks } from "../action/action";
 import PhoneItem from "./PhoneItem";
 import { loadPage, loadPhonebooks } from "../reducers/API";
 import { selectPhonebooks } from "../reducers/phonebook";
 
 export default function PhoneList({ keyword, sort }) {
     const dispatch = useDispatch()
-    const { phonebooks, page, pages} = useSelector(selectPhonebooks)
+    const { phonebooks, page, pages } = useSelector(selectPhonebooks)
     const [isLoading, setIsLoading] = useState(false)
 
     const handleScroll = async () => {
@@ -37,17 +36,17 @@ export default function PhoneList({ keyword, sort }) {
     }, [dispatch, pages, page, keyword, sort])
 
     useEffect(() => {
-        
+
         const readData = async () => {
-                try {
+            try {
 
-                    dispatch(loadPhonebooks({ keyword, sort }))
-                } catch (error) {
-                    console.log(error)
+                dispatch(loadPhonebooks({ keyword, sort }))
+            } catch (error) {
+                console.log(error)
 
-                } finally {
-                    setIsLoading(false)
-                }
+            } finally {
+                setIsLoading(false)
+            }
         }
         readData()
     }, [dispatch, keyword, sort])

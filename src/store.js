@@ -3,7 +3,7 @@ import contactsReducer from "../src/reducers/phonebook"
 
 
 export const store = configureStore({
-    reducer:{
+    reducer: {
         contacts: contactsReducer
     }
 })

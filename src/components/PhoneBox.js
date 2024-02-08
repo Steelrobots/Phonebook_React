@@ -11,7 +11,7 @@ export default function PhoneBox() {
     return (
         <>
             <SearchBar keyword={keyword} setKeyword={setKeyword} sort={sort} setSort={setSort} />
-            <PhoneList keyword = {keyword} sort = {sort} />
+            <PhoneList keyword={keyword} sort={sort} />
 
         </>
     )

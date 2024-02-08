@@ -20,8 +20,8 @@ export default function PhoneAdd() {
             <form onSubmit={AddData}>
                 <div className="container-add">
                     <input type="text" id="name" required onChange={(e) => setAdd({ ...add, name: e.target.value })} />
-                    <input type="text" id="phone" required onChange={(e) => setAdd({ ...add, phone: e.target.value })}/>
-            </div>
+                    <input type="text" id="phone" required onChange={(e) => setAdd({ ...add, phone: e.target.value })} />
+                </div>
                 <div className="btn-add">
                     <button type="submit"><p>save</p></button>
                     <Link to="/">cancel</Link>

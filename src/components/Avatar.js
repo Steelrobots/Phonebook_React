@@ -1,10 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { updateAvatar } from "../action/action";
 import { faArrowRotateLeft, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
-// import defaultAvatar from "../../public/Defaultavatar.png"
 
 export default function Avatar() {
     const dispatch = useDispatch()
