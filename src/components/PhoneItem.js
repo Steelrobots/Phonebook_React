@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import { deletePhonebooks, updateAvatar, updateData } from "../action/action";
 import { confirmAlert } from "react-confirm-alert";
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { deletePhonebooks, updateAvatar, updateData } from "../reducers/API";
@@ -25,6 +24,7 @@ export default function PhoneItem({ user }) {
         if (e.target.files && e.target.files.length > 0) {
             console.log(e.target.files[0])
             setSelectImage(e.target.files[0])
+            console.log(selectImage)
         }
     };
     useEffect(() => {
